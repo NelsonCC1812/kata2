@@ -4,23 +4,23 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class HistogramGenerator {
+public class HistogramGenerator<T> {
 
-    private final Integer[] data;
+    private final T[] data;
 
-    public HistogramGenerator(Integer[] data) {
+    public HistogramGenerator(T[] data) {
         this.data = data;
     }
 
-    public Integer[] getData() {
+    public T[] getData() {
         return Arrays.copyOf(this.data, this.data.length);
     }
 
-    public Map<Integer, Integer> getHistogram() {
+    public Map<T, Integer> getHistogram() {
 
-        Map<Integer, Integer> histogram = new HashMap<Integer, Integer>();
+        Map<T, Integer> histogram = new HashMap<T, Integer>();
 
-        for (Integer elm : data) {
+        for (T elm : data) {
 
             histogram.put(elm, histogram.containsKey(elm) ? histogram.get(elm) + 1 : 1);
 

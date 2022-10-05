@@ -6,7 +6,7 @@ public class Kata2 {
     public static void main(String[] args) {
         Integer[] data = { 1, 2, 3, 4, 5, 2, 3, 3, 4, 4, 4, 5, 5, 5, 5 };
 
-        HistogramGenerator histogramGenerator = new HistogramGenerator(data);
+        HistogramGenerator<Integer> histogramGenerator = new HistogramGenerator<Integer>(data);
         Map<Integer, Integer> histogram = histogramGenerator.getHistogram();
 
         for (Integer key : histogram.keySet()) {
