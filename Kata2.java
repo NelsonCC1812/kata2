@@ -4,13 +4,15 @@ import java.util.Map;
 
 public class Kata2 {
     public static void main(String[] args) {
-        Integer[] data = { 1, 2, 3, 4, 5, 2, 3, 3, 4, 4, 4, 5, 5, 5, 5 };
+        String[] data = { "Ana", "Benancio", "Casandra", "Diana", "Emily", "Benancio", "Casandra", "Casandra", "Diana",
+                "Diana", "Diana", "Emily", "Emily", "Emily",
+                "Emily" };
 
-        HistogramGenerator<Integer> histogramGenerator = new HistogramGenerator<Integer>(data);
-        Map<Integer, Integer> histogram = histogramGenerator.getHistogram();
+        HistogramGenerator<String> histogramGenerator = new HistogramGenerator<String>(data);
+        Map<String, Integer> histogram = histogramGenerator.getHistogram();
 
-        for (Integer key : histogram.keySet()) {
-            System.out.println(String.format("key %d ==> %d", key, histogram.get(key)));
+        for (String key : histogram.keySet()) {
+            System.out.println(String.format("key %s ==> %s", key, histogram.get(key)));
         }
     }
 }
