@@ -11,11 +11,7 @@ public class Kata2 {
 
         for (Integer elm : data) {
 
-            if (histogram.containsKey(elm)) {
-                histogram.put(elm, histogram.get(elm) + 1);
-            } else {
-                histogram.put(elm, 1);
-            }
+            histogram.put(elm, histogram.containsKey(elm) ? histogram.get(elm) + 1 : 1);
         }
 
         for (Integer key : histogram.keySet()) {
